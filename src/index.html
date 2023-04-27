@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>AnderMatt.</title>
+        <meta name="description" content="">
+        <!-- google fonts -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gilda+Display&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <!-- font awesome cdn   -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- slick slider -->
+        <!-- Add the slick-theme.css if you want default styling -->
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <!-- Add the slick-theme.css if you want default styling -->
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+        <!-- date picker -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.css" integrity="sha512-YdYyWQf8AS4WSB0WWdc3FbQ3Ypdm0QCWD2k4hgfqbQbRCJBEgX0iAegkl2S1Evma5ImaVXLBeUkIlP6hQ1eYKQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- swiper js -->
+        <link rel="stylesheet" href="../dist/main.css">
+    </head>
+    <body>
+        <header class = "bg-header-image bg-cover bg-center bg-no-repeat min-h-screen flex flex-col overflow-hidden">
+            <div class = "header-top bg-eerie-black min-h-[48px] flex items-center font-barlow py-3">
+                <div class="container max-w-[1200px] mx-auto lg:flex lg:justify-between">
+                    <div class = "header-top-left flex flex-col items-center sm:flex-row sm:justify-center lg:justify-start">
+                        <div class = "flex py-1">
+                            <img src = "../assets/images/icons/map-marker.svg" class = "w-[10px] mx-2" alt = "">
+                            <span class = "text-platinum opacity-60 font-light text-sm">6390 Engelberg,  Switzerland</span>
+                        </div>
+                        <div class = "flex py-1 md:ms-5 lg:ms-[72px]">
+                            <img src = "../assets/images/icons/call-calling.svg" class = "w-3 mx-2" alt = "">
+                            <span class = "text-platinum opacity-60 font-light text-sm">+41 31 377 77 77</span>
+                        </div>
+                    </div>
+                    
+                    <ul class = "flex items-center justify-center py-1">
+                        <li class = "w-3 h-3 md:w-4 md:h-4 flex items-center justify-center mx-2">
+                            <a href = "#" class = "hover:opacity-80 transition ease-in-out duration-300">
+                                <img src = "../assets/images/icons/instagram.svg" alt = "">
+                            </a>
+                        </li>
+                        <li class = "w-3 h-3 md:w-4 md:h-4 flex items-center justify-center mx-2">
+                            <a href = "#" class = "hover:opacity-80 transition ease-in-out duration-300">
+                                <img src = "../assets/images/icons/pinterest.svg" alt = "">
+                            </a>
+                        </li>
+                        <li class = "w-3 h-3 md:w-4 md:h-4 flex items-center justify-center mx-2">
+                            <a href = "#" class = "hover:opacity-80 transition ease-in-out duration-300">
+                                <img src = "../assets/images/icons/facebook.svg" alt = "">
+                            </a>
+                        </li>
+                        <li class = "font-medium uppercase text-white ms-2 text-xs md:text-sm tracking-widest mt-[2px]">follow us</li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "header-main px-3 flex-1 flex">
+                <div class="container max-w-[1200px] mx-auto flex flex-col">
+                    <nav class = "py-5 md:flex md:justify-between">
+                        <div class = "flex justify-between">
+                            <a href = "#" class = "font-gilda text-[28px] font-normal text-lion">Ander<span class = "text-white">Matt.</span></a>
+                            <button type = "button" class = "text-white md:hidden" id = "navbar-show-btn">
+                                <i class = 'fas fa-bars'></i>
+                            </button>
+                        </div>
+                        <div class = "navbar-box fixed top-0 right-0 w-[280px] h-full bg-white p-5 flex flex-col items-center font-barlow-cond translate-x-full transition duration-300 ease-in-out md:relative md:translate-x-0 md:bg-transparent md:flex-row md:h-auto md:w-auto md:p-0">
+                            <button type = "button " class = "absolute top-[18px] right-[18px] z-50 text-2xl hover:rotate-180 transition duration-300 ease-in-out md:hidden" id = "navbar-hide-btn">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <ul class = "flex flex-col w-full text-center mt-[60px] md:flex-row md:mt-0">
+                                <li class="py-3 border-b-[1px] border-solid md:py-0 md:border-none">
+                                    <a href = "#" class = "text-eerie-black uppercase text-md tracking-[.12em] font-medium hover:text-lion transition duration-300 ease-in-out md:mx-[14px] xl:mx-5 2xl:mx-6 md:text-white">home</a>
+                                </li>
+                                <li class="py-3 border-b-[1px] border-solid md:py-0 md:border-none">
+                                    <a href = "#" class = "text-eerie-black uppercase text-md tracking-[.12em] font-medium hover:text-lion transition duration-300 ease-in-out md:mx-[14px] xl:mx-5 2xl:mx-6 md:text-white">rooms</a>
+                                </li>
+                                <li class="py-3 border-b-[1px] border-solid md:py-0 md:border-none">
+                                    <a href = "#" class = "text-eerie-black uppercase text-md tracking-[.12em] font-medium hover:text-lion transition duration-300 ease-in-out md:mx-[14px] xl:mx-5 2xl:mx-6 md:text-white">events</a>
+                                </li>
+                                <li class="py-3 border-b-[1px] border-solid md:py-0 md:border-none">
+                                    <a href = "#" class = "text-eerie-black uppercase text-md tracking-[.12em] font-medium hover:text-lion transition duration-300 ease-in-out md:mx-[14px] xl:mx-5 2xl:mx-6 md:text-white">gallery</a>
+                                </li>
+                                <li class="py-3 md:py-0">
+                                    <a href = "#" class = "text-eerie-black uppercase text-md tracking-[.12em] font-medium hover:text-lion transition duration-300 ease-in-out md:mx-[14px] xl:mx-5 2xl:mx-6 md:text-white">contact</a>
+                                </li>
+                            </ul>
+
+                            <a href = "#" class = "w-full h-[42px] px-7 uppercase flex items-center justify-center bg-lion tracking-widest font-medium text-white mt-4 hover:bg-lion-dark md:mt-0 md:min-w-[140px] ms-6">know more</a>
+                        </div>
+                    </nav>
+                    <div class="flex-1 flex items-center justify-stretch flex-col text-center py-12">
+                        <h1 class = "text-2xl xs:text-[32px] text-white font-gilda tracking-[.04em] uppercase font-normal max-w-[800px] md:text-[42px]">An upcoming vacation gives us something to eagerly anticipate.</h1>
+                        <a href = "#" class = "min-w-[158px] min-h-[48px] bg-transparent uppercase text-white border-2 font-barlow tracking-widest text-base font-normal inline-flex items-center justify-center mt-9 md:mt-[60px] hover:bg-white hover:text-black transition duration-300 ease-in-out">know more</a>
+
+                        <form class="font-barlow mt-16 bg-white w-full grid sm:grid-cols-2 lg:grid-cols-6">
+                            <div class = "flex items-center justify-between px-3 py-4 border-[1px] border-solid">
+                                <input data-toggle = "datepicker" type = "text" class = "placeholder:text-eerie-black placeholder:uppercase text-sm outline-none border-none w-full" placeholder="check in">
+                                <span class="cursor-pointer">
+                                    <img src = "../assets/images/icons/calendar.svg">
+                                </span>
+                            </div>
+                            <div class = "flex items-center justify-between px-3 py-4 border-[1px]">
+                                <input data-toggle = "datepicker" type = "text" class = "placeholder:text-eerie-black placeholder:uppercase text-sm outline-none border-none w-full" placeholder="check in">
+                                <span class="cursor-pointer">
+                                    <img src = "../assets/images/icons/calendar.svg">
+                                </span>
+                            </div>
+                            <div class="px-2 py-4 border-[1px]">
+                                <select class="min-w-full uppercase text-eerie-black outline-none">
+                                    <option disabled selected>adult</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                            </div>
+                            <div class="px-2 py-4 border-[1px]">
+                                <select class="min-w-full uppercase text-eerie-black outline-none">
+                                    <option disabled selected>children</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                            </div>
+                            <div class="px-2 py-4 border-[1px]">
+                                <select class="min-w-full uppercase text-eerie-black outline-none">
+                                    <option selected>1 room</option>
+                                    <option>2 room</option>
+                                    <option>3 room</option>
+                                </select>
+                            </div>
+                            <button type = "button" class = "bg-lion font-barlow h-full min-h-[52px] flex items-center justify-center uppercase text-white transition duration-300 ease-in-out hover:bg-lion-dark">check now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class = "bg-nero min-h-[640px] mx-auto px-3 flex items-center py-16">
+            <div class="container max-w-[1200px] mx-auto grid md:grid-cols-2 gap-14">
+                <div class = "flex flex-col justify-center items-start">
+                    <h3 class = "text-coyote font-normal opacity-70 tracking-[.25em] font-barlow-cond text-xl sm:text-[22px] uppercase">welcome to</h3>
+                    <h1 class = "font-gilda text-2xl sm:text-[38px] tracking-[.04em] font-normal py-3 text-white mb-3">Andermatt Resort  & Farm</h1>
+                    <p class = "opacity-60 font-light font-barlow text-justify text-base sm:text-lg text-white">Andermatt is located in the middle of the Swiss Alps. In recent years, Andermatt Swiss Alps has expanded its infrastructure, created attractive opportunities for investors and created new jobs for the entire region.</p>
+                    <a href = "#" class = "bg-lion font-barlow px-4 min-w-[158px] min-h-[48px] inline-flex items-center justify-center uppercase text-white transition duration-300 ease-in-out hover:bg-lion-dark mt-8 tracking-widest">know more</a>
+                </div>
+
+                <div class = "welcome-slider overflow-hidden">
+                    <div class = "h-[425px]">
+                        <img class = "w-full h-full object-cover" src = "../assets/images/welcome-img-1.png" alt = "welcome image">
+                    </div>
+                    <div class = "h-[425px]">
+                        <img class = "w-full h-full object-cover" src = "../assets/images/welcome-img-2.png" alt = "welcome image">
+                    </div>
+                    <div class = "h-[425px]">
+                        <img class = "w-full h-full object-cover" src = "../assets/images/welcome-img-3.png" alt = "welcome image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class = "min-h-[600px] py-16 flex flex-col items-center justify-center bg-banner-image bg-center bg-cover bg-fixed bg-no-repeat px-3">
+            <div class = "container max-w-[1200px] mx-auto text-white text-center">
+                <h2 class = "font-gilda font-normal text-2xl sm:text-[38px] tracking-[.04em] mb-3">Relax at the bedrooms with Comfy Couches.</h2>
+                <div class="flex items-center justify-center">
+                    <img src = "../assets/images/decorated-pattern.svg" alt = "">
+                </div>
+                <p class="mt-9 tracking-[.04em] text-lg sm:text-2xl font-barlow font-light max-w-[600px] mx-auto leading-7 sm:leading-9">Everything for an active vacation and luxury experience lover.</p>
+                <a href = "#" class = "bg-lion font-barlow px-4 min-w-[158px] min-h-[48px] inline-flex items-center justify-center uppercase text-white transition duration-300 ease-in-out hover:bg-lion-dark mt-8 tracking-widest">explore now</a>
+            </div>
+        </section>
+        
+        <section class = "py-16 px-3">
+            <div class="container max-w-[1200px] mx-auto">
+                <h2 class = "font-gilda font-normal text-3xl sm:text-[46px] tracking-[.04em] text-coyote text-center mb-3">Rooms & Suites</h2>
+                <div class="flex items-center justify-center">
+                    <img src = "../assets/images/decorated-pattern-2.svg" alt = "">
+                </div>
+                <div class = "grid gap-10 md:grid-cols-2 py-10">
+                    <p class = "text-black opacity-60 font-light text-base sm:text-lg font-barlow first-letter:text-4xl first-letter:font-bold first-letter:tracking-[.03em]">Andermatt is located in the middle of the Swiss Alps. In recent years, Andermatt Swiss Alps has expanded its infrastructure, created attractive opportunities for investors and created new jobs for the entire region.</p>
+
+                    <ul class = "bg-lion py-5 sm:py-9 px-7">
+                        <li class = "grid items-center grid-cols-[32px_auto] my-1">
+                            <img src = "../assets/images/icons/hotel.svg" alt = "">
+                            <span class = "text-white font-barlow text-base font-light">The best prices for your relaxing vacation.</span>
+                        </li>
+                        <li class = "grid items-center grid-cols-[32px_auto] my-1">
+                            <img src = "../assets/images/icons/hotel.svg" alt = "">
+                            <span class = "text-white font-barlow text-base font-light">Ultimate place to spend time with you loved ones.</span>
+                        </li>
+                        <li class = "grid items-center grid-cols-[32px_auto] my-1">
+                            <img src = "../assets/images/icons/hotel.svg" alt = "">
+                            <span class = "text-white font-barlow text-base font-light">Cool place to have entertaining time. </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class = "grid sm:grid-cols-2 lg:grid-cols-3 gap-[4px]">
+                    <a href = "#" class = "object-cover relative after:absolute after:content-[''] after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-b from-black/25 to-black/75 hover:before  before:absolute before:content-[''] before:top-3 before:left-3 before:right-3 before:bottom-3 before:border-white before:border-2 before:border-solid before:z-10 before:opacity-0 hover:before:opacity-100 before:transition before:duration-300 before:ease-in-out">
+                        <img src = "../assets/images/room-1.png" class = "w-full h-full object-cover" alt = "">
+                        <div class = "absolute bottom-0 left-2/4 -translate-x-2/4 text-white font-medium uppercase text-xl md:text-2xl font-barlow z-10 px-4 mb-14 text-center w-full tracking-widest">Stay Room</div>
+                    </a>
+
+                    <a href = "#" class = "object-cover relative after:absolute after:content-[''] after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-b from-black/25 to-black/75 hover:before  before:absolute before:content-[''] before:top-3 before:left-3 before:right-3 before:bottom-3 before:border-white before:border-2 before:border-solid before:z-10 before:opacity-0 hover:before:opacity-100 before:transition before:duration-300 before:ease-in-out">
+                        <img src = "../assets/images/room-2.png" class = "w-full h-full object-cover" alt = "">
+                        <div class = "absolute bottom-0 left-2/4 -translate-x-2/4 text-white font-medium uppercase text-xl md:text-2xl font-barlow z-10 px-4 mb-14 text-center w-full tracking-widest">conference/meeting hall</div>
+                    </a>
+
+                    <a href = "#" class = "object-cover relative after:absolute after:content-[''] after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-b from-black/25 to-black/75 hover:before  before:absolute before:content-[''] before:top-3 before:left-3 before:right-3 before:bottom-3 before:border-white before:border-2 before:border-solid before:z-10 before:opacity-0 hover:before:opacity-100 before:transition before:duration-300 before:ease-in-out">
+                        <img src = "../assets/images/room-3.png" class = "w-full h-full object-cover" alt = "">
+                        <div class = "absolute bottom-0 left-2/4 -translate-x-2/4 text-white font-medium uppercase text-xl md:text-2xl font-barlow z-10 px-4 mb-14 text-center w-full tracking-widest">wedding</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class = "py-16 px-3 bg-booking-image bg-center bg-cover bg-no-repeat">
+            <div class = "container max-w-[1200px] mx-auto">
+                <h2 class = "font-gilda font-normal text-3xl sm:text-[46px] tracking-[.04em] text-center text-white mb-3">Hotel Booking Form</h2>
+                <div class="flex items-center justify-center">
+                    <img src = "../assets/images/decorated-pattern.svg" alt = "">
+                </div>
+
+                <form class = "my-16 max-w-[824px] mx-auto">
+                    <div class = "my-3">
+                        <input type = "text" class = "outline-none py-4 px-5 bg-transparent caret-white text-white text-lg tracking-[.04em] font-light font-barlow placeholder:text-white border-white border-solid border-b-[1px] w-full" placeholder="Full Name">
+                    </div>
+
+                    <div class = "grid md:grid-cols-2 md:my-3 md:gap-x-10">
+                        <input type = "text" class = "outline-none py-4 px-5 bg-transparent caret-white text-white text-lg tracking-[.04em] font-light font-barlow placeholder:text-white border-white border-solid border-b-[1px] w-full my-3" placeholder="Phone Number">
+
+                        <input type = "text" class = "outline-none py-4 px-5 bg-transparent caret-white text-white text-lg tracking-[.04em] font-light font-barlow placeholder:text-white border-white border-solid border-b-[1px] w-full my-3" placeholder="Email Address (optional)">
+                    </div>
+
+                    <div class = "grid md:grid-cols-2 md:my-3 md:gap-x-10">
+                        <input type = "text" class = "outline-none py-4 px-5 bg-transparent caret-white text-white text-lg tracking-[.04em] font-light font-barlow placeholder:text-white border-white border-solid border-b-[1px] w-full my-3" placeholder="Purpose of Booking">
+
+                        <select class = "outline-none py-4 px-5 bg-transparent text-white text-lg tracking-[.04em] font-light font-barlow border-white border-solid border-b-[1px] w-full my-3">
+                            <option selected disabled>No. of Adult</option>
+                            <option class = "bg-black/30" value="1">1</option>
+                            <option class = "bg-black/30" value="2">2</option>
+                            <option class = "bg-black/30" value="3">3</option>
+                        </select>
+                    </div>
+
+                    <div class = "grid md:grid-cols-2 md:my-3 md:gap-x-10">
+                        <input type = "date" class = "outline-none py-4 px-5 bg-transparent caret-white text-white text-lg tracking-[.04em] font-light font-barlow placeholder:text-white border-white border-solid border-b-[1px] w-full my-3">
+                        
+                        <input type = "time" class = "outline-none py-4 px-5 bg-transparent caret-white text-white text-lg tracking-[.04em] font-light font-barlow placeholder:text-white border-white border-solid border-b-[1px] w-full my-3">
+                    </div>
+
+                    <div class="flex items-center justify-center">
+                        <a href = "#" class = "bg-white font-barlow px-4 min-w-[158px] min-h-[48px] inline-flex items-center justify-center uppercase text-eerie-black transition duration-300 ease-in-out hover:bg-eerie-black hover:text-white mt-8 tracking-widest">explore now</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class = "py-16 px-3 bg-white">
+            <div class="container max-w-[1200px] mx-auto">
+                <h2 class = "font-gilda font-normal text-3xl sm:text-[46px] tracking-[.04em] text-coyote text-center mb-3">Events</h2>
+                <div class="flex items-center justify-center">
+                    <img src = "../assets/images/decorated-pattern-2.svg" alt = "">
+                </div>
+
+                <div class = 'grid gap-2 md:grid-cols-2 lg:grid-cols-3 mt-10'>
+                    <div class = "min-h-[323px] relative">
+                        <img src = "../assets/images/events-1.png" class = "w-full h-full object-cover">
+                        <div class = 'text-white absolute bottom-2 left-2 right-2 bg-black/50 p-5'>
+                            <div class = "w-[70px] h-[70px] bg-lion rounded-full flex items-center justify-center flex-col uppercase font-mont text-sm absolute top-0 right-3 -translate-y-[50%]">
+                                <span class = "font-bold tracking-widest text-xl inline-block">03</span>
+                                <span class = "tracking-widest inline-block -mt-[3px]">apr</span>
+                            </div>
+                            <h3 class = "font-gilda text-xl tracking-[.04em] uppercase">decade nights</h3>
+                            <p class = "font-normal tracking-[.04em] font-barlow text-lg">Saturday Music Fest - <span class = "font-light">07:00 PM</span></p>
+                        </div>
+                    </div>
+
+                    <div class = "min-h-[323px] relative">
+                        <img src = "../assets/images/events-2.png" class = "w-full h-full object-cover">
+                        <div class = 'text-white absolute bottom-2 left-2 right-2 bg-black/50 p-5'>
+                            <div class = "w-[70px] h-[70px] bg-lion rounded-full flex items-center justify-center flex-col uppercase font-mont text-sm absolute top-0 right-3 -translate-y-[50%]">
+                                <span class = "font-bold tracking-widest text-xl inline-block">06</span>
+                                <span class = "tracking-widest inline-block -mt-[3px]">may</span>
+                            </div>
+                            <h3 class = "font-gilda text-xl tracking-[.04em] uppercase">wine tastings</h3>
+                            <p class = "font-normal tracking-[.04em] font-barlow text-lg">Special Wine Dinner - <span class = "font-light">09:00 PM</span></p>
+                        </div>
+                    </div>
+
+                    <div class = "min-h-[323px] relative">
+                        <img src = "../assets/images/events-3.png" class = "w-full h-full object-cover">
+                        <div class = 'text-white absolute bottom-2 left-2 right-2 bg-black/50 p-5'>
+                            <div class = "w-[70px] h-[70px] bg-lion rounded-full flex items-center justify-center flex-col uppercase font-mont text-sm absolute top-0 right-3 -translate-y-[50%]">
+                                <span class = "font-bold tracking-widest text-xl inline-block">10</span>
+                                <span class = "tracking-widest inline-block -mt-[3px]">jun</span>
+                            </div>
+                            <h3 class = "font-gilda text-xl tracking-[.04em] uppercase">love is in the air</h3>
+                            <p class = "font-normal tracking-[.04em] font-barlow text-lg">Romantic Couple Nights - <span class = "font-light">06:00 PM</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class = "py-16 px-3 bg-light-gray">
+            <div class = "container max-w-[1200px] mx-auto">
+                <h2 class = "font-gilda font-normal text-3xl text-[46px] tracking-[.04em] text-coyote text-center mb-3">Gallery</h2>
+                <div class="flex items-center justify-center">
+                    <img src = "../assets/images/decorated-pattern-2.svg" alt = "">
+                </div>
+                <div class = "grid gap-3 sm:grid-cols-2 md:grid-cols-3 mt-10">
+                    <div class = "group min-h-[260px] relative after:absolute after:content-[''] after:left-0 after:top-0 after:w-full after:h-full after:bg-gradient-to-t after:from-black/75 after:to-black/5 after:opacity-0 hover:after:opacity-100 after:transition after:duration-300 after:ease-in-out overflow-hidden">
+                        <img src = "../assets/images/gallery-1.png" class = "w-full h-full object-cover" alt = "">
+                        <div class = "bg-lion text-white py-2 px-4 flex items-center justify-between absolute bottom-3 left-0 z-10 -translate-x-full group-hover:translate-x-0 transition duration-300 ease-in-out w-4/5">
+                            <span class = "font-barlow text-lg font-normal">Fancy Sleeping Room</span>
+                            <ul class = "flex items-center">
+                                <li class = "text-sm"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class = "group min-h-[260px] relative after:absolute after:content-[''] after:left-0 after:top-0 after:w-full after:h-full after:bg-gradient-to-t after:from-black/75 after:to-black/5 after:opacity-0 hover:after:opacity-100 after:transition after:duration-300 after:ease-in-out overflow-hidden">
+                        <img src = "../assets/images/gallery-2.png" class = "w-full h-full object-cover" alt = "">
+                        <div class = "bg-lion text-white py-2 px-4 flex items-center justify-between absolute bottom-3 left-0 z-10 -translate-x-full group-hover:translate-x-0 transition duration-300 ease-in-out w-4/5">
+                            <span class = "font-barlow text-lg font-normal">Fancy Sleeping Room</span>
+                            <ul class = "flex items-center">
+                                <li class = "text-sm"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "group min-h-[260px] relative after:absolute after:content-[''] after:left-0 after:top-0 after:w-full after:h-full after:bg-gradient-to-t after:from-black/75 after:to-black/5 after:opacity-0 hover:after:opacity-100 after:transition after:duration-300 after:ease-in-out overflow-hidden">
+                        <img src = "../assets/images/gallery-3.png" class = "w-full h-full object-cover" alt = "">
+                        <div class = "bg-lion text-white py-2 px-4 flex items-center justify-between absolute bottom-3 left-0 z-10 -translate-x-full group-hover:translate-x-0 transition duration-300 ease-in-out w-4/5">
+                            <span class = "font-barlow text-lg font-normal">Fancy Sleeping Room</span>
+                            <ul class = "flex items-center">
+                                <li class = "text-sm"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "group min-h-[260px] relative after:absolute after:content-[''] after:left-0 after:top-0 after:w-full after:h-full after:bg-gradient-to-t after:from-black/75 after:to-black/5 after:opacity-0 hover:after:opacity-100 after:transition after:duration-300 after:ease-in-out overflow-hidden">
+                        <img src = "../assets/images/gallery-4.png" class = "w-full h-full object-cover" alt = "">
+                        <div class = "bg-lion text-white py-2 px-4 flex items-center justify-between absolute bottom-3 left-0 z-10 -translate-x-full group-hover:translate-x-0 transition duration-300 ease-in-out w-4/5">
+                            <span class = "font-barlow text-lg font-normal">Fancy Sleeping Room</span>
+                            <ul class = "flex items-center">
+                                <li class = "text-sm"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "group min-h-[260px] relative after:absolute after:content-[''] after:left-0 after:top-0 after:w-full after:h-full after:bg-gradient-to-t after:from-black/75 after:to-black/5 after:opacity-0 hover:after:opacity-100 after:transition after:duration-300 after:ease-in-out overflow-hidden">
+                        <img src = "../assets/images/gallery-5.png" class = "w-full h-full object-cover" alt = "">
+                        <div class = "bg-lion text-white py-2 px-4 flex items-center justify-between absolute bottom-3 left-0 z-10 -translate-x-full group-hover:translate-x-0 transition duration-300 ease-in-out w-4/5">
+                            <span class = "font-barlow text-lg font-normal">Fancy Sleeping Room</span>
+                            <ul class = "flex items-center">
+                                <li class = "text-sm"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "group min-h-[260px] relative after:absolute after:content-[''] after:left-0 after:top-0 after:w-full after:h-full after:bg-gradient-to-t after:from-black/75 after:to-black/5 after:opacity-0 hover:after:opacity-100 after:transition after:duration-300 after:ease-in-out overflow-hidden">
+                        <img src = "../assets/images/gallery-6.png" class = "w-full h-full object-cover" alt = "">
+                        <div class = "bg-lion text-white py-2 px-4 flex items-center justify-between absolute bottom-3 left-0 z-10 -translate-x-full group-hover:translate-x-0 transition duration-300 ease-in-out w-4/5">
+                            <span class = "font-barlow text-lg font-normal">Fancy Sleeping Room</span>
+                            <ul class = "flex items-center">
+                                <li class = "text-sm"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                                <li class = "text-sm ms-1"><i class = "fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class = "py-16 px-3 bg-banner-image bg-center bg-cover bg-fixed bg-no-repeat">
+            <div class = "container max-w-[1200px] mx-auto">
+                <h2 class = "font-gilda font-normal text-3xl sm:text-[46px] tracking-[.04em] text-coyote text-center mb-3">Our Hotel Services</h2>
+                <div class="flex items-center justify-center">
+                    <img src = "../assets/images/decorated-pattern-2.svg" alt = "">
+                </div>
+
+                <div class = "grid gap-3 mt-10 sm:grid-cols-2 md:grid-cols-3">
+                    <div class = "flex text-center flex-col justify-center items-center bg-black/30 p-10 hover:bg-black/50 transition duration-300 ease-in-out">
+                        <img src = "../assets/images/icons/plane.svg" class = "w-[54px]">
+                        <h4 class = "mt-4 mb-2 text-lion font-gilda text-xl tracking-[.04em] font-normal">Pick Up & Drop</h4>
+                        <p class = "text-white text-base font-barlow font-light tracking-[.04em]">We’ll pick up from airport while you comfy on your ride, mus nellentesque habitant.</p>
+                    </div>
+
+                    <div class = "flex text-center flex-col justify-center items-center bg-black/30 p-10 hover:bg-black/50 transition duration-300 ease-in-out">
+                        <img src = "../assets/images/icons/vehicle.svg" class = "w-[54px]">
+                        <h4 class = "mt-4 mb-2 text-lion font-gilda text-xl tracking-[.04em] font-normal">Parking Space</h4>
+                        <p class = "text-white text-base font-barlow font-light tracking-[.04em]">We’ll pick up from airport while you comfy on your ride, mus nellentesque habitant.</p>
+                    </div>
+
+                    <div class = "flex text-center flex-col justify-center items-center bg-black/30 p-10 hover:bg-black/50 transition duration-300 ease-in-out">
+                        <img src = "../assets/images/icons/bed.svg" class = "w-[54px]">
+                        <h4 class = "mt-4 mb-2 text-lion font-gilda text-xl tracking-[.04em] font-normal">Room Service</h4>
+                        <p class = "text-white text-base font-barlow font-light tracking-[.04em]">We’ll pick up from airport while you comfy on your ride, mus nellentesque habitant.</p>
+                    </div>
+
+                    <div class = "flex text-center flex-col justify-center items-center bg-black/30 p-10 hover:bg-black/50 transition duration-300 ease-in-out">
+                        <img src = "../assets/images/icons/pool.svg" class = "w-[54px]">
+                        <h4 class = "mt-4 mb-2 text-lion font-gilda text-xl tracking-[.04em] font-normal">Swimming Pool</h4>
+                        <p class = "text-white text-base font-barlow font-light tracking-[.04em]">We’ll pick up from airport while you comfy on your ride, mus nellentesque habitant.</p>
+                    </div>
+
+                    <div class = "flex text-center flex-col justify-center items-center bg-black/30 p-10 hover:bg-black/50 transition duration-300 ease-in-out">
+                        <img src = "../assets/images/icons/wifi.svg" class = "w-[54px]">
+                        <h4 class = "mt-4 mb-2 text-lion font-gilda text-xl tracking-[.04em] font-normal">Fibre Internet</h4>
+                        <p class = "text-white text-base font-barlow font-light tracking-[.04em]">We’ll pick up from airport while you comfy on your ride, mus nellentesque habitant.</p>
+                    </div>
+
+                    <div class = "flex text-center flex-col justify-center items-center bg-black/30 p-10 hover:bg-black/50 transition duration-300 ease-in-out">
+                        <img src = "../assets/images/icons/food.svg" class = "w-[54px]">
+                        <h4 class = "mt-4 mb-2 text-lion font-gilda text-xl tracking-[.04em] font-normal">Breakfast</h4>
+                        <p class = "text-white text-base font-barlow font-light tracking-[.04em]">We’ll pick up from airport while you comfy on your ride, mus nellentesque habitant.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class = "py-16 px-3 bg-nero">
+            <div class = "container max-w-[1200px] mx-auto">
+                <h2 class = "font-gilda font-normal text-3xl sm:text-[46px] tracking-[.04em] text-center text-white mb-3">Blogs & News</h2>
+                <div class="flex items-center justify-center">
+                    <img src = "../assets/images/decorated-pattern.svg" alt = "">
+                </div>
+
+                <div class = "grid mt-10 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-10">
+                    <a href = "#" class = "transition duration-300 ease-in-out hover:-translate-y-5">
+                        <div class = "min-h-[400px]">
+                            <img src = "../assets/images/blogs-1.png" class = "w-full h-full object-cover" alt = "">
+                        </div>
+                        <div class = "bg-white text-coyote text-center text-lg sm:text-xl font-gilda font-medium tracking-widest uppercase py-6 px-4">historic restaurant renovation</div>
+                    </a>
+
+                    <a href = "#" class = "transition duration-300 ease-in-out hover:-translate-y-5">
+                        <div class = "min-h-[400px]">
+                            <img src = "../assets/images/blogs-2.png" class = "w-full h-full object-cover" alt = "">
+                        </div>
+                        <div class = "bg-white text-coyote text-center text-lg sm:text-xl font-gilda font-medium tracking-widest uppercase py-6 px-4">historic restaurant renovation</div>
+                    </a>
+
+                    <a href = "#" class = "transition duration-300 ease-in-out hover:-translate-y-5">
+                        <div class = "min-h-[400px]">
+                            <img src = "../assets/images/blogs-3.png" class = "w-full h-full object-cover" alt = "">
+                        </div>
+                        <div class = "bg-white text-coyote text-center text-lg sm:text-xl font-gilda font-medium tracking-widest uppercase py-6 px-4">historic restaurant renovation</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87690.04466922798!2d8.53166346786506!3d46.62056049739522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4785722d97e91c73%3A0xbc8cd6deadd8518b!2sAndermatt%2C%20Switzerland!5e0!3m2!1sen!2snp!4v1682507333021!5m2!1sen!2snp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class = "min-h-[480px] w-full"></iframe>
+        </section>
+
+        <footer>
+            <div class="bg-nero py-16 px-3">
+                <div class = "grid max-w-[1200px] mx-auto gap-8 text-center md:grid-cols-2 md:text-start lg:grid-cols-footer">
+                    <div class = "md:me-2 lg:me-3">
+                        <a href = "index.html" class = "text-lion font-gilda font-normal text-2xl tracking-[.04em]">Ander<span class = "text-white">Matt.</span></a>
+                        <p class = "text-white font-light font-barlow text-base mt-3 max-w-[480px] mx-auto md:ms-0">Welcome to the best five-star deluxe hotel in Swiss city. Hotel elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat.</p>
+                    </div>
+
+                    <div>
+                        <h4 class = "inline-block font-gilda tracking-[.04em] text-lg text-white capitalize relative after:absolute after:content-[''] after:left-0 after:-bottom-0 after:h-[1px] after:w-full after:bg-coyote pb-1 mb-4">quick link</h4>
+                        <ul>
+                            <li class = "my-2">
+                                <a href = "#" class = "capitalize font-barlow font-light text-base text-white hover:text-white/50 transition duration-300 ease-in-out">our services</a>
+                            </li>
+                            <li class = "my-2">
+                                <a href = "#" class = "capitalize font-barlow font-light text-base text-white hover:text-white/50 transition duration-300 ease-in-out">book</a>
+                            </li>
+                            <li class = "my-2">
+                                <a href = "#" class = "capitalize font-barlow font-light text-base text-white hover:text-white/50 transition duration-300 ease-in-out">about hotel</a>
+                            </li>
+                            <li class = "my-2">
+                                <a href = "#" class = "capitalize font-barlow font-light text-base text-white hover:text-white/50 transition duration-300 ease-in-out">blogs</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class = "inline-block font-gilda tracking-[.04em] text-lg text-white capitalize relative after:absolute after:content-[''] after:left-0 after:-bottom-0 after:h-[1px] after:w-full after:bg-coyote pb-1 mb-4">explore</h4>
+                        <ul>
+                            <li class = "my-2">
+                                <a href = "#" class = "capitalize font-barlow font-light text-base text-white hover:text-white/50 transition duration-300 ease-in-out">rooms & suites</a>
+                            </li>
+                            <li class = "my-2">
+                                <a href = "#" class = "capitalize font-barlow font-light text-base text-white hover:text-white/50 transition duration-300 ease-in-out">spa & wellness</a>
+                            </li>
+                            <li class = "my-2">
+                                <a href = "#" class = "capitalize font-barlow font-light text-base text-white hover:text-white/50 transition duration-300 ease-in-out">special offers</a>
+                            </li>
+                            <li class = "my-2">
+                                <a href = "#" class = "capitalize font-barlow font-light text-base text-white hover:text-white/50 transition duration-300 ease-in-out">restaurant</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class = "inline-block font-gilda tracking-[.04em] text-lg text-white capitalize relative after:absolute after:content-[''] after:left-0 after:-bottom-0 after:h-[1px] after:w-full after:bg-coyote pb-1 mb-4">contact</h4>
+                        <ul>
+                            <li class = "my-2 grid grid-cols-[40px_auto] justify-center md:justify-start">
+                                <span class = "text-white">
+                                    <i class = "fas fa-map-marker-alt"></i>
+                                </span>
+                                <span class = "text-white/50 font-light">6390 Engelberg,  Switzerland</span>
+                            </li>
+                            <li class = "my-2 grid grid-cols-[40px_auto] justify-center md:justify-start ">
+                                <span class = "text-white">
+                                    <i class = "fas fa-phone"></i>
+                                </span>
+                                <span class = "text-white/50 font-light">+41 31 377 77 77</span>
+                            </li>
+                            <li class = "my-2 grid grid-cols-[40px_auto] justify-center md:justify-start">
+                                <span class = "text-white">         
+                                    <i class = "fas fa-envelope"></i>
+                                </span>
+                                <span class = "text-white/50 font-light">info.adermatt@mail.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class = "py-4 text-white font-normal font-barlow uppercase text-center tracking-widest bg-nero-dark">
+                <p class = "text-sm">&copy; copyright 2023 by geekthemes.com</p>
+            </div>
+        </footer>
+
+        <!-- jquery cdn -->
+        <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+        <!-- Date picker -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js" integrity="sha512-RCgrAvvoLpP7KVgTkTctrUdv7C6t7Un3p1iaoPr1++3pybCyCsCZZN7QEHMZTcJTmcJ7jzexTO+eFpHk4OCFAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- slick slide js -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

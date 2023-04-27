@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slick-dots{
+  height: 56px;
+  position: relative!important;
+  bottom: -25px!important;
+}
+
+.slick-dots li{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.slick-dots button{
+  background-color: #fff!important;
+  border-radius: 100%;
+  opacity: 0.4;
+}
+
+.slick-dots button::before{
+  color: #fff!important;
+  opacity: 0.4;
+}
+
+.slick-dots li.slick-active button{
+  opacity: 1;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
